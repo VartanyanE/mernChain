@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
-// import crudRoutes from "./routes/routes.js";
+import mernRoutes from "./routes/routes.js";
 // import userRouter from "./routes/userRoutes.js"
 import dotenv from "dotenv";
 dotenv.config();
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 //specify at what endpoint do we want to hit our routes
-// app.use("/api/data", crudRoutes);
+app.use("/api/data", mernRoutes);
 // app.use("/users", userRouter);
 
 const PORT = process.env.PORT || 3001;
